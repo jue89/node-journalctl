@@ -12,5 +12,18 @@
   "devDependencies": {
     "happiness": "^10.0.2",
     "jest": "^22.4.3"
+  },
+  "happiness": {
+    "globals": [
+      "jest",
+      "describe",
+      "test",
+      "expect",
+      "beforeEach"
+    ]
+  },
+  "jest": {
+    "automock": false,
+    "clearMocks": true
   }
 }
