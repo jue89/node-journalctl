@@ -4,8 +4,13 @@
   "description": "Web UI displaying journalctl",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "happiness && jest",
+    "watch": "jest --watchAll"
   },
   "author": "Juergen Fitschen <me@jue.yt>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "happiness": "^10.0.2",
+    "jest": "^22.4.3"
+  }
 }
