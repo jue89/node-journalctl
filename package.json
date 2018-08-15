@@ -1,13 +1,27 @@
 {
   "name": "journalctl",
   "version": "0.0.0",
-  "description": "Web UI displaying journalctl",
-  "main": "index.js",
+  "description": "Module for consuming the Systemd Journal",
+  "main": "journalctl.js",
+  "keywords": [
+    "logging",
+    "systemd",
+    "journald",
+    "journalctl"
+  ],
   "scripts": {
     "test": "happiness && jest",
     "watch": "jest --watchAll"
   },
   "author": "Juergen Fitschen <me@jue.yt>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jue89/node-journalctl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jue89/node-journalctl/issues"
+  },
+  "homepage": "https://github.com/jue89/node-journalctl#readme",
   "license": "MIT",
   "devDependencies": {
     "happiness": "^10.0.2",
