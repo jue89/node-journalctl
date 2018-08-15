@@ -44,3 +44,56 @@ test('kill journalctl', () => {
 	childProcess.__spawn.emit('exit');
 	expect(cb.mock.calls.length).toBe(1);
 });
+
+test('specify identifier', () => {
+	const IDENTIFIER = 'test';
+	const j = new Journalctl({
+		identifier: IDENTIFIER
+	});
+	expect(childProcess.spawn.mock.calls.length).toBe(1);
+	expect(childProcess.spawn.mock.calls[0]).toEqual([
+		'journalctl',
+		['-f', '-o', 'json', '-t', IDENTIFIER]
+	]);
+	expect(j).toBeInstanceOf(EventEmitter);
+});
+
+test('specify unit', () => {
+	const UNIT = 'test';
+	const j = new Journalctl({
+		unit: UNIT
+	});
+	expect(childProcess.spawn.mock.calls.length).toBe(1);
+	expect(childProcess.spawn.mock.calls[0]).toEqual([
+		'journalctl',
+		['-f', '-o', 'json', '-u', UNIT]
+	]);
+	expect(j).toBeInstanceOf(EventEmitter);
+});
+
+test('specify filter', () => {
+	const FILTER = 'MESSAGE_ID=test';
+	const j = new Journalctl({
+		filter: FILTER
+	});
+	expect(childProcess.spawn.mock.calls.length).toBe(1);
+	expect(childProcess.spawn.mock.calls[0]).toEqual([
+		'journalctl',
+		['-f', '-o', 'json', FILTER]
+	]);
+	expect(j).toBeInstanceOf(EventEmitter);
+});
+
+test('specify multiple filter', () => {
+	const FILTER1 = 'MESSAGE_ID=test';
+	const FILTER2 = '_HOSTNAME=test';
+	const j = new Journalctl({
+		filter: [FILTER1, FILTER2]
+	});
+	expect(childProcess.spawn.mock.calls.length).toBe(1);
+	expect(childProcess.spawn.mock.calls[0]).toEqual([
+		'journalctl',
+		['-f', '-o', 'json', FILTER1, FILTER2]
+	]);
+	expect(j).toBeInstanceOf(EventEmitter);
+});
