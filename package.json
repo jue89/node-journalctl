@@ -1,11 +1,43 @@
 {
   "name": "journalctl",
-  "version": "0.0.0",
-  "description": "Web UI displaying journalctl",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Module for consuming the Systemd Journal",
+  "main": "journalctl.js",
+  "keywords": [
+    "logging",
+    "systemd",
+    "journald",
+    "journalctl"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "happiness && jest",
+    "watch": "jest --watchAll"
   },
   "author": "Juergen Fitschen <me@jue.yt>",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jue89/node-journalctl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jue89/node-journalctl/issues"
+  },
+  "homepage": "https://github.com/jue89/node-journalctl#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "happiness": "^10.0.2",
+    "jest": "^22.4.3"
+  },
+  "happiness": {
+    "globals": [
+      "jest",
+      "describe",
+      "test",
+      "expect",
+      "beforeEach"
+    ]
+  },
+  "jest": {
+    "automock": false,
+    "clearMocks": true
+  }
 }
