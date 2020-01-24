@@ -15,6 +15,9 @@ The optional object ```opts``` can have the following properties:
  * ```identifier```: Just output logs of the given syslog identifier (cf. man journalctl, option '-t')
  * ```unit```: Just output logs originated from the given unit file (cf. man journalctl, option '-u')
  * ```filter```: An array of matches to filter by (cf. man journalctl, matches)
+ * ```all```: Show all fields in full, even if they include unprintable characters or are very long. (cf. man journalctl, option '-a')
+* ```lines```: Show the most recent journal events and limit the number of events shown (cf. man journalctl, option '-n')
+* ```since```: Start showing entries on or newer than the specified date (cf. man journalctl, option '-S')
 
 ### Event: 'event'
 
